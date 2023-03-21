@@ -1,0 +1,21 @@
+* {
+  font-family: Graphik-Regular-Web, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #14181c;
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  transition: 0.5s;
+}
+
+a:hover {
+  color: #d8e0e8;
+}

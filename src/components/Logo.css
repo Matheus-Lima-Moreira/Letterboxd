@@ -1,0 +1,23 @@
+.leftButton {
+  color: #ff8000;
+}
+
+.middleButton {
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+  color: #00e959; 
+  mix-blend-mode: screen;
+  background-blend-mode: screen;
+}
+
+.rightButton {
+  color: #40bcf4;
+  margin-right: 0.5rem;
+}
+
+.text {
+  font-size: larger;
+  color: #e6e6e6;
+  font-family: Comic-Sans-MS, sans-serif;
+  font-weight: bolder;
+}
