@@ -4,6 +4,8 @@
   align-items: center;
   padding: 0.7rem 10rem;
   background-color: #00000000;
+  position: relative;
+  z-index: 2;
 }
 
 #navbar:hover {
@@ -30,12 +32,12 @@
 
 #navbar input:hover {
   background-color: #c2c4c9;
-  transition: 0.5s;
+  transition: 0.25s;
 }
 
 #navbar input:focus {
   background-color: #fff;
-  transition: 0.5s;
+  transition: 0.25s;
 }
 
 #navbar input:focus-visible {
@@ -63,15 +65,15 @@
 
 #navbar input:hover+button {
   color: #89a;
-  transition: 0.5s;
+  transition: 0.25s;
 }
 
 #navbar input:focus+button {
   color: #89a;
-  transition: 0.5s;
+  transition: 0.25s;
 }
 
 #navbar input:focus-visible+button {
   color: #89a;
-  transition: 0.5s;
+  transition: 0.25s;
 }

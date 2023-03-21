@@ -14,12 +14,16 @@ export interface Props {
 const MovieCard = (props: Props) => {
   const { movie, showLink } = props.props;
 
+  const convertToBase5 = (rating: number) => {
+    return Math.round((rating / 10) * 5 * 2) / 2;
+  }
+
   return (
     <div className='movie-card'>
       <img src={imageUrl + movie.poster_path} alt={movie.title} />
-      <h2>{showLink ? <Link to={`/movie/${movie.id}`}>{movie.title}</Link> : movie.title}</h2>
+      {/* <h2>{showLink ? <Link to={`/movie/${movie.id}`}>{movie.title}</Link> : movie.title}</h2> */}
       <p>
-        <IoIosStar /> {movie.vote_average}
+        <IoIosStar className='star-icon' /> {convertToBase5(movie.vote_average)}
       </p>
     </div>
   )
