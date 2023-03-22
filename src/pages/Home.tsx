@@ -6,17 +6,17 @@ const moviesURL: string = import.meta.env.VITE_API;
 const apiKey: string = import.meta.env.VITE_API_KEY;
 
 const Home = () => {
-  const [ratedMovies, setRatedMovies] = useState<movie[]>([]);
+  const [popularMovies, setPopularMovies] = useState<movie[]>([]);
 
-  const getRatedMovies = async (url: string) => {
+  const getPopularMovies = async (url: string) => {
     const response = await fetch(url);
     const data = await response.json();
-    setRatedMovies(data.results);
+    setPopularMovies(data.results.slice(0,18));
   };
 
   useEffect(() => {
-    const ratedMoviesUrl: string = `${moviesURL}top_rated?${apiKey}`;
-    getRatedMovies(ratedMoviesUrl);
+    const ratedMoviesUrl: string = `${moviesURL}popular?${apiKey}`;
+    getPopularMovies(ratedMoviesUrl);
   }, []);
 
   return (
@@ -35,10 +35,10 @@ const Home = () => {
         <div className='fade'></div>
       </div>
       <div className='container'>
-        <h2 className='title'>Best Rated Movies</h2>
+        <h2 className='title'>Popular Movies</h2>
         <div className='movies-container'>
-          {ratedMovies.length === 0 && <h2>Carregando...</h2>}
-          {ratedMovies.length > 0 && ratedMovies.map((movie) => {
+          {popularMovies.length === 0 && <h2>Carregando...</h2>}
+          {popularMovies.length > 0 && popularMovies.map((movie) => {
             const props = { movie: movie, showLink: true };
             return <MovieCard key={movie.id} props={props} />;
           })}
