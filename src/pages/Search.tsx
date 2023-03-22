@@ -17,18 +17,17 @@ const Search = () => {
   const getSearchedMovies = async (url: string) => {
     const response = await fetch(url);
     const data = await response.json();
-    setMovies(data.results);
+    setMovies(data.results.slice(0,18));
   };
 
   useEffect(() => {  
-    const searchWithQueryUrl: string = `${searchUrl}?${apiKey}&query=${query}`;
-    console.log(searchWithQueryUrl)
+    const searchWithQueryUrl: string = `${searchUrl}?${apiKey}&query=${query.split(' ').join('+')}`;
     getSearchedMovies(searchWithQueryUrl);
   }, [query]);
 
   return (
     <div className='container'>
-      <h3 className='resultSearch'>FOUND X MATCHES FOR "{query}"</h3>
+      <h3 className='resultSearch'>FOUND {movies.length} MATCHES FOR "{query}"</h3>
       <div className='movies-container'>
         {movies.length === 0 && <h2>Carregando...</h2>}
         {movies.length > 0 && movies.map((movie) => {
