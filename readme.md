@@ -41,6 +41,6 @@ Some images of the project:
 
 ![image](https://github.com/Matheus-Lima-Moreira/Letterboxd/blob/main/public/search.png?raw=true)
 
-![image](https://github.com/Matheus-Lima-Moreira/Letterboxd/blob/main/public/movieDetails.png?raw=true)
+![image](https://github.com/Matheus-Lima-Moreira/Letterboxd/blob/main/public/movieDetails.jpg?raw=true)
 
 ![image](https://github.com/Matheus-Lima-Moreira/Letterboxd/blob/main/public/movieDetails2.png?raw=true)
