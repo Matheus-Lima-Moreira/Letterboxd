@@ -1,6 +1,8 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import { IoIosStar } from 'react-icons/io';
+import { HiLanguage } from 'react-icons/hi2';
+import { FcLikePlaceholder } from "react-icons/fc";
 
 const imageUrl: string = import.meta.env.VITE_IMAGE;
 
@@ -32,8 +34,23 @@ const MovieCard = ({ movie }: Props) => {
     <div className='movie-card' onClick={handleClick} onMouseOver={handleMouseOver} onMouseLeave={handleMouseLeave} id={movie.id.toString()}>
       {movie.poster_path ? <img src={imageUrl + movie.poster_path} alt={movie.title} /> : <img src='https://via.placeholder.com/300x450' alt={movie.title} />}
       <span className='movie-status'>
-        <span><IoIosStar className='star-icon' /> {convertToBase5(movie.vote_average)}</span><br />
-        <span>{movie.vote_count}</span>
+        {/* Star */}
+        <span>
+          <IoIosStar className='icon' />
+          {convertToBase5(movie.vote_average)}
+        </span>
+        <br />
+        {/* Language */}
+        <span>
+          <HiLanguage className='icon' />
+          {movie.original_language}
+        </span>
+        <br />
+        {/* Popularity */}
+        <span>
+          <FcLikePlaceholder className='icon' />
+          {movie.popularity}
+        </span>
       </span>
     </div>
   )

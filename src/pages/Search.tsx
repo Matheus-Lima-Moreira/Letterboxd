@@ -29,7 +29,7 @@ const Search = () => {
     <div className='container'>
       <h3 className='resultSearch'>FOUND {movies.length} MATCHES FOR "{query}"</h3>
       <div className='movies-container'>
-        {movies.length === 0 && <h2>Carregando...</h2>}
+        {movies.length === 0 && <h2 className='loading'>Loading...</h2>}
         {movies.length > 0 && movies.map((movie) => <MovieCard key={movie.id} movie={movie} />)}
       </div>
     </div>
