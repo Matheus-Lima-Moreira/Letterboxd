@@ -1,5 +1,5 @@
 import { VscCircleLargeFilled } from 'react-icons/vsc';
-import './Logo.css';
+import './css/Logo.css';
 
 const Logo = () => {
   return <div>

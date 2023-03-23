@@ -1,18 +1,14 @@
 import React from 'react'
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { IoIosStar } from 'react-icons/io';
 
 const imageUrl: string = import.meta.env.VITE_IMAGE;
 
-export interface Props {
-  props: {
-    movie: movie;
-    showLink: boolean;
-  }
+type Props = {
+  movie: movie;
 };
 
-const MovieCard = (props: Props) => {
-  const { movie, showLink } = props.props;
+const MovieCard = ({ movie }: Props) => {
   const navigate = useNavigate();
 
   const convertToBase5 = (rating: number) => {
@@ -34,16 +30,10 @@ const MovieCard = (props: Props) => {
 
   return (
     <div className='movie-card' onClick={handleClick} onMouseOver={handleMouseOver} onMouseLeave={handleMouseLeave} id={movie.id.toString()}>
-      {
-        movie.poster_path
-          ?
-          <img src={imageUrl + movie.poster_path} alt={movie.title} />
-          :
-          <img src='https://via.placeholder.com/300x450' alt={movie.title} />
-      }
+      {movie.poster_path ? <img src={imageUrl + movie.poster_path} alt={movie.title} /> : <img src='https://via.placeholder.com/300x450' alt={movie.title} />}
       <span className='movie-status'>
         <span><IoIosStar className='star-icon' /> {convertToBase5(movie.vote_average)}</span><br />
-        <span>{movie.title}</span>
+        <span>{movie.vote_count}</span>
       </span>
     </div>
   )

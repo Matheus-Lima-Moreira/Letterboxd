@@ -5,7 +5,7 @@
   margin: 2rem 0 1rem;
 }
 
-.title .query-text {
+.title {
   color: #f65261;
   font-weight: 600;
 }
@@ -30,6 +30,7 @@
 
 .movies-container div img {
   max-width: 100%;
+  height: 100%;
 }
 
 .star-icon {

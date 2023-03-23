@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import MovieCard from '../components/MovieCard';
-import './MoviesGrid.css';
+import './css/MoviesGrid.css';
 
 const searchUrl: string = import.meta.env.VITE_SEARCH;
 const apiKey: string = import.meta.env.VITE_API_KEY;
@@ -17,10 +17,10 @@ const Search = () => {
   const getSearchedMovies = async (url: string) => {
     const response = await fetch(url);
     const data = await response.json();
-    setMovies(data.results.slice(0,18));
+    setMovies(data.results.slice(0, 18));
   };
 
-  useEffect(() => {  
+  useEffect(() => {
     const searchWithQueryUrl: string = `${searchUrl}?${apiKey}&query=${query.split(' ').join('+')}`;
     getSearchedMovies(searchWithQueryUrl);
   }, [query]);
@@ -30,10 +30,7 @@ const Search = () => {
       <h3 className='resultSearch'>FOUND {movies.length} MATCHES FOR "{query}"</h3>
       <div className='movies-container'>
         {movies.length === 0 && <h2>Carregando...</h2>}
-        {movies.length > 0 && movies.map((movie) => {
-          const props = { movie: movie, showLink: true };
-          return <MovieCard key={movie.id} props={props} />;
-        })}
+        {movies.length > 0 && movies.map((movie) => <MovieCard key={movie.id} movie={movie} />)}
       </div>
     </div>
   )

@@ -12,6 +12,10 @@ declare global {
     popularity: number;
     poster_path: string;
     release_date: string;
+    tagline: string;
+    budget: number;
+    revenue: number;
+    runtime: number;
     title: string;
     video: boolean;
     vote_average: number;
