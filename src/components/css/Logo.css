@@ -1,3 +1,8 @@
+.logo{
+  display: flex;
+  align-items: center;
+}
+
 .leftButton {
   color: #ff8000;
 }

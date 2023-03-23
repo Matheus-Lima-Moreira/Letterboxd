@@ -21,7 +21,7 @@ const Home = () => {
 
   return (
     <>
-      <div className='initialScrren'>
+      <div className='initialScreen'>
         <div className='imageBackground'>
           <h1 className='initialText'>
             Track films you’ve watched.<br />
