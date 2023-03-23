@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import MovieCard from '../components/MovieCard';
-import './MoviesGrid.css';
+import './css/MoviesGrid.css';
 
 const moviesURL: string = import.meta.env.VITE_API;
 const apiKey: string = import.meta.env.VITE_API_KEY;
@@ -11,7 +11,7 @@ const Home = () => {
   const getPopularMovies = async (url: string) => {
     const response = await fetch(url);
     const data = await response.json();
-    setPopularMovies(data.results.slice(0,18));
+    setPopularMovies(data.results.slice(0, 18));
   };
 
   useEffect(() => {
@@ -38,10 +38,7 @@ const Home = () => {
         <h2 className='title'>Popular Movies</h2>
         <div className='movies-container'>
           {popularMovies.length === 0 && <h2>Carregando...</h2>}
-          {popularMovies.length > 0 && popularMovies.map((movie) => {
-            const props = { movie: movie, showLink: true };
-            return <MovieCard key={movie.id} props={props} />;
-          })}
+          {popularMovies.length > 0 && popularMovies.map((movie) => <MovieCard key={movie.id} movie={movie} />)}
         </div>
       </div>
     </>
